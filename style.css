@@ -1,0 +1,142 @@
+body {
+    background: #3494E6;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #EC6EAD, #3494E6);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #EC6EAD, #3494E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+display: flex;
+justify-content: center;
+align-items: center;
+position: relative;
+height: 100vh;
+/* width: 100%; */
+overflow: hidden;
+}
+
+.blocks {
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+}
+
+.blocks span {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    background-color: rgb(255, 255, 255, 0.15);
+    box-shadow: 0px 20px 50px rgb(0, 0, 0, 0.15);
+    animation: move 7s linear infinite;
+    overflow: hidden;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    user-select: none;
+    /* z-index: -1; */
+
+}
+
+@keyframes move {
+    100% {
+        transform: translateY(-85vh);
+    }
+}
+
+.blocks span.one {
+    animation-delay: 4s;
+    transform: scale(1.4);
+}
+.blocks span.two {
+    animation-delay: 1s;
+    transform: scale(0.5);
+}
+.blocks span.three {
+    animation-delay: 5.5s;
+    transform: scale(2);
+}
+.blocks span.four {
+    animation-delay: 3.2s;
+    transform: scale(1.2);
+}
+.blocks span.five {
+    animation-delay: 2.5s;
+    transform: scale(1);
+}
+.blocks span.six {
+    animation-delay: 7s;
+    transform: scale(2.2);
+}
+.blocks span.seven {
+    animation-delay: 4s;
+    transform: scale(1.4);
+}
+
+.blocks span:before{
+    content: "";
+    position: absolute;
+    bottom: -120%;
+    height: 200px;
+    width: 40%;
+    transform: skew(45deg);
+    animation: run 1.7s linear infinite;
+    background-color: rgba(255, 255, 255, 0.35);
+}
+
+.blocks span:hover{
+    background-color: rgb(255, 255, 255, 0.35);
+    width: 90px;
+    height: 90px;
+}
+
+@keyframes run {
+    100%{
+        transform: translateX(450px);
+    }
+}
+
+.calculator {
+    padding: 20px;
+    background-color: rgb(255, 255, 255, 0.35);
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    width: 350px;
+    height: auto;
+    z-index: 1;
+}
+
+.calculator input[type="text"] {
+    width: calc(100% - 20px);
+    height: 75px;
+    background: rgba(255, 255, 255, 0);
+    color: #ffff;
+    outline: none;
+    border: 1px solid rgb(255,255,255,.20);
+    font-size: 20px;
+    text-align: right;
+    padding: 10px;
+}
+
+
+
+.calculator .buttons {
+    width: 100%;
+}
+
+.calculator .buttons button {
+    width: calc( 100% / 4 - 5px);
+    height: 60px;
+    border: none;
+    outline: none;
+    background-color: inherit;
+    margin-bottom: 5px;
+    transition: all 0.25s ease;
+    border-radius: 6px;
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.75) ;
+    font-weight: bold;
+}
+
+.calculator .buttons button:hover {
+    background-color: rgb(255, 255, 255, 0.35);
+}
